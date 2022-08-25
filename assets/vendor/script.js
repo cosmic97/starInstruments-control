@@ -5,7 +5,7 @@ $(document).ready(function(){
 	//hamburger menu to show navigation links on click
   hamburger.click(function() {
     hamburger.toggleClass('active');
-    navLinks.toggleClass('is-active');
+    navLinks.toggleClass('active');
     $('body').toggleClass('hide-scroll');
   });
 });

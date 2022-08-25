@@ -103,31 +103,33 @@ li {
   }
 
 header .wrapper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
 }
 
+
 .logo { 
-    font-size: 24px;    
-    color: brown;
+	margin: 2rem;
+  font-size: 24px;    
+  color: brown;
 }
 
 .logo:hover {
-    color:chocolate;
-    transition: .4s ease-in-out;
+  color:chocolate;
+  transition: .4s ease-in-out;
 }
 
 .nav-links li {
-    padding: 0 20px;
-    font-size: 20px;
+  padding: 0 20px;
+  font-size: 20px;
 }
 
-.nav-links li a {
-    color: brown;
-}
+.nav-links li a { color: brown; }
+
 .nav-links li a:hover {
-    color:chocolate;
-    transition: .4s ease-in-out;
+  color:chocolate;
+  transition: .4s ease-in-out;
 }
 
 .hamburger { display: none; }
@@ -142,27 +144,53 @@ header .wrapper {
   transition: all 0.3s ease-in-out;
 }
 
-@media only screen and (max-width: 995px){
-    .hamburger { 
-			display: block; 
-			cursor: pointer;
-		}
+@media only screen and (max-width: 1024px){
+  .hamburger { 
+		display: block; 
+		cursor: pointer;
+	}
 
-		.hamburger.active .bar:nth-child(2) { opacity: 0;}
+	.hamburger.active .bar:nth-child(2) { opacity: 0;}
+	.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
+	.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
+	
+	.nav-links { display: none; }
 
-    .hamburger.active .bar:nth-child(1) { 
-      -webkit-transform: translateY(2px) rotate(45deg); 
-      -ms-transform: translateY(2px) rotate(45deg); 
-      transform: translateY(2px) rotate(45deg);
-    }
-    
-    .hamburger.active .bar:nth-child(3) { 
-      -webkit-transform: translateY(-8px) rotate(-45deg); 
-      -ms-transform: translateY(-8px) rotate(-45deg); 
-      transform: translateY(-8px) rotate(-45deg);
-    }
+	.nav-links {
+    width: 100%;
+    max-height: calc(100% - 50px);
+    min-height: 100vh;
+    padding: 20px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    top: 80px;
+    left: 100%;
+    background-color: #101010;
+    -webkit-transition: .4s linear;
+    -o-transition: .4s linear;
+    transition: .4s linear;
+    overflow-y: auto;
+  }
 
-		.nav-links {
-			display: none;
-		}
+  .nav-links.active { 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    left: 0; 
+  }
+
+	.nav-links.active a { padding: 40px; }
+
+	body.hide-scroll {overflow-y: hidden;}
+	
 }
