@@ -48,6 +48,11 @@ strong {
   font-size: inherit;
 }
 
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
 em { font-style: italic; }
 
 img {
@@ -144,6 +149,38 @@ header .wrapper {
   transition: all 0.3s ease-in-out;
 }
 
+/* slider styling starts */
+.slick img {height: 100vh;}
+
+.slick-prev {
+  left: 25px;
+  z-index: 1;
+}
+		.slick-prev.active { z-index: 0;}
+
+.slick-next {
+	right: 40px;
+}
+
+.slick-next::before { content: url(/assets/images/308956_arrow_next_icon.png); }
+.slick-prev::before { content: url(/assets/images/308957_arrow_previous_icon.png); }
+
+.slick-dots {
+	bottom: 0px;
+}
+
+.slick-dots li button:before {
+	color: crimson;
+	font-size: 15px;
+}
+
+.slick-dots li.slick-active button:before {
+	opacity: 1;
+	color: #fff;
+}
+
+/* slider styling ends */
+
 @media only screen and (max-width: 1024px){
   .hamburger { 
 		display: block; 
@@ -192,5 +229,7 @@ header .wrapper {
 	.nav-links.active a { padding: 40px; }
 
 	body.hide-scroll {overflow-y: hidden;}
+
+	.slick img {height: 50vh;}
 	
 }
