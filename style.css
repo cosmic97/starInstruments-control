@@ -129,3 +129,40 @@ header .wrapper {
     color:chocolate;
     transition: .4s ease-in-out;
 }
+
+.hamburger { display: none; }
+.bar { text-indent: -9999px; }
+
+.bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  display: block;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 995px){
+    .hamburger { 
+			display: block; 
+			cursor: pointer;
+		}
+
+		.hamburger.active .bar:nth-child(2) { opacity: 0;}
+
+    .hamburger.active .bar:nth-child(1) { 
+      -webkit-transform: translateY(2px) rotate(45deg); 
+      -ms-transform: translateY(2px) rotate(45deg); 
+      transform: translateY(2px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) { 
+      -webkit-transform: translateY(-8px) rotate(-45deg); 
+      -ms-transform: translateY(-8px) rotate(-45deg); 
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+		.nav-links {
+			display: none;
+		}
+}
