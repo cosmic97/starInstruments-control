@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -87,7 +88,7 @@ sub { bottom: -.25em; }
 /*for all*/
 body {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a { 
@@ -112,7 +113,6 @@ header .wrapper {
   justify-content: space-between;
 	align-items: center;
 }
-
 
 .logo { 
 	margin: 2rem;
@@ -165,9 +165,7 @@ header .wrapper {
 .slick-next::before { content: url(/assets/images/308956_arrow_next_icon.png); }
 .slick-prev::before { content: url(/assets/images/308957_arrow_previous_icon.png); }
 
-.slick-dots {
-	bottom: 0px;
-}
+.slick-dots { bottom: 0px; }
 
 .slick-dots li button:before {
 	color: crimson;
@@ -178,8 +176,78 @@ header .wrapper {
 	opacity: 1;
 	color: #fff;
 }
-
 /* slider styling ends */
+
+.section-heading {
+	font-size: 24px;
+	text-align: center;
+}
+
+.section-content {
+	font-size: 20px;
+	padding: 15px 0;
+}
+
+.card {
+	height: 300px;
+	width: 500px;
+	margin: 50px;
+	box-shadow: 5px 5px 20px black;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.card img {
+	height: 100%;
+	width: 100%;
+}
+
+.cards {
+	display: flex;
+	position: relative;
+}
+
+.card-info {
+	height: 50px;
+	width: 336px; 
+	padding: 6px;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 50px;
+	background: rgb(27, 27, 27, .5);
+	color: #fff;
+	transition: .5s ease-in;
+}
+
+.card-info h3 {
+	margin: 10px 20px;
+	font-size: 26px;
+	text-align: center;
+}
+
+.card-info p {
+	margin: 0 20px;
+	font-size: 18px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.card:hover { cursor: pointer; }
+
+.card:hover .card-info{
+	height: 150px;
+	bottom: 40px;
+	background:#000;
+}
+
+.card:hover p {
+	opacity: 1;
+	visibility: visible;
+}
+
+.card:hover img {
+	transform: scale(1.1) rotate(-3deg);
+}
 
 @media only screen and (max-width: 1024px){
   .hamburger { 
@@ -227,9 +295,10 @@ header .wrapper {
   }
 
 	.nav-links.active a { padding: 40px; }
-
 	body.hide-scroll {overflow-y: hidden;}
-
 	.slick img {height: 50vh;}
-	
+}
+
+@media only screen and (max-width: 480px) {
+	.logo { font-size: 14px; }
 }
