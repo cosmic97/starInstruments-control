@@ -98,7 +98,6 @@ a {
 
 li {
   display: inline-block;
-  list-style-type: none;
 }
 
 /*for wrapper*/
@@ -179,13 +178,14 @@ header .wrapper {
 /* slider styling ends */
 
 .section-heading {
-	font-size: 24px;
+	font-size: 30px;
 	text-align: center;
 }
 
 .section-content {
+  padding: 16px 0;
+  line-height: 1.6;
 	font-size: 20px;
-	padding: 15px 0;
 }
 
 .cards {
@@ -205,20 +205,30 @@ header .wrapper {
 
 .card {
   margin: 0 1% 20px 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  background-color: #000;
+  border-radius: 10px;
 }
 .card:nth-child(3n) { margin-right: 0; }
 
 .card-heading {
-  padding-bottom: 10px;
+  padding: 15px 0;
   font-size: 20px;
   text-align: center;
+  color: crimson;
 }
 
-.card-info { padding: 20px; }
+.card-desc { padding: 10px; }
 
-.card-desc { font-size: 18px; }
+.card-desc li { 
+  padding: 5px;
+  display: list-item;
+  list-style-type: circle;
+  list-style-position: inside;
+  font-size: 18px; 
+  color: #ddd;
+}
+
+.card:hover {scale: 1.05;}
 
 @media only screen and (max-width: 1024px){
   .hamburger { 
