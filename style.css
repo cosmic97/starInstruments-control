@@ -299,6 +299,10 @@ header .wrapper {
 	.nav-links.active a { padding: 40px; }
 	body.hide-scroll {overflow-y: hidden;}
 	.slick img {height: 50vh;}
+
+  .about-content {
+    flex-direction: column-reverse;
+  }
 }
 
 @media only screen and (max-width: 767px) {
